@@ -1,9 +1,34 @@
 body {
-  color: $prime-font-color;
-  background-color: white;
-  font-family: Arial;
-  
+  background: #eee;
+  min-height: 100vh;
+	box-sizing: border-box;
+	padding-top: 10vh;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 60rem;
+  margin: 0 auto;
+  font-size: 112%;
 }
 * {
   box-sizing: border-box;
+}
+
+.borderedx4{
+  $border-size: 4px;
+  border-bottom: $border-size solid $border-color;
+  border-left: $border-size solid $border-color;
+  border-right: $border-size solid $border-color;
+}
+
+.image-borderedx6{
+  $image-border-size: 6px;;
+  border-top: $image-border-size solid $border-color;
+  border-bottom: $image-border-size solid $border-color;
+  border-left: $image-border-size solid $border-color;
+  border-right: $image-border-size solid $border-color;
+}
+
+.borderedx2{
+  border-bottom: 2px solid $border-color;
 }
