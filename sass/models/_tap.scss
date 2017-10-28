@@ -27,11 +27,14 @@
     flex-grow: 1;
     width: 100%;
     display: none;
+    transition: opacity 1s ease-out;
+    opacity: 0;
     background: $bg-tap-color;
     .tab-aktuelles, .tab-veranstaltung{
       padding: 20px;
     }
     .tab-aktuelles{
+      padding: 3rem;
       .image-container{
         display: inline-block;
         float: left;
@@ -62,6 +65,7 @@
       height: 60px;
       + .tab {
         display: block;
+        opacity: 1;
       }
     }
   }
@@ -100,6 +104,7 @@
         }
         .text-container{
           width: 90%;
+          margin-left: 1.5rem;
         }
       }
     }
@@ -119,5 +124,10 @@
   }
   .additional-content{
     border-top: 4px solid $border-color;
+    .content-wrapper{
+      a{
+        text-align: center;
+      }
+    }
   }
 }

@@ -87,33 +87,39 @@ body {
             flex-grow: 1;
     width: 100%;
     display: none;
+    -webkit-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+    opacity: 0;
     background: #fff; }
     .tabs .tab .tab-aktuelles, .tabs .tab .tab-veranstaltung {
       padding: 20px; }
-    .tabs .tab .tab-aktuelles .image-container {
-      display: inline-block;
-      float: left;
-      height: 150px;
-      width: 150px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-image: url(../../img/placeholder_480x260.svg);
-      background-repeat: no-repeat; }
-    .tabs .tab .tab-aktuelles .text-container {
-      width: 70%;
-      margin-left: 2rem;
-      text-align: left;
-      display: inline-block; }
-      .tabs .tab .tab-aktuelles .text-container p {
-        margin-top: 0; }
+    .tabs .tab .tab-aktuelles {
+      padding: 3rem; }
+      .tabs .tab .tab-aktuelles .image-container {
+        display: inline-block;
+        float: left;
+        height: 150px;
+        width: 150px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(../../img/placeholder_480x260.svg);
+        background-repeat: no-repeat; }
+      .tabs .tab .tab-aktuelles .text-container {
+        width: 70%;
+        margin-left: 2rem;
+        text-align: left;
+        display: inline-block; }
+        .tabs .tab .tab-aktuelles .text-container p {
+          margin-top: 0; }
   .tabs input[type="radio"] {
     display: none; }
     .tabs input[type="radio"]:checked + label {
       background: #fff;
       height: 60px; }
       .tabs input[type="radio"]:checked + label + .tab {
-        display: block; }
+        display: block;
+        opacity: 1; }
 
 .additional-content {
   height: 5rem; }
@@ -144,7 +150,8 @@ body {
         -webkit-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%); }
       .tabs .tab .tab-aktuelles .text-container {
-        width: 90%; }
+        width: 90%;
+        margin-left: 1.5rem; }
     .tabs label:last-child {
       margin-bottom: 4px; }
     .tabs label {
@@ -158,4 +165,6 @@ body {
         margin-left: 4px;
         margin-right: 4px; }
   .additional-content {
-    border-top: 4px solid #dadada; } }
+    border-top: 4px solid #dadada; }
+    .additional-content .content-wrapper a {
+      text-align: center; } }
