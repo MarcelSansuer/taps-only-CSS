@@ -1,0 +1,198 @@
+::selection {
+  background-color: $bg-tap-color;
+}
+
+.bordered{
+  border-bottom: 2px solid $border-color;
+  border-left: 2px solid $border-color;
+  border-right: 2px solid $border-color;
+}
+
+.tabbed {
+  background-color: $bg-color;
+  width: 700px;
+  margin: 50px auto;
+  .tapped-wrapper > {
+    input {
+      display: none;
+    }
+    label {
+      height: 40px;
+      display: block;
+      float: left;
+      padding: 12px 20px;
+      &:nth-of-type(1n+2){
+        margin-left: 2px;
+      }
+      margin-left: 15px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color .3s;
+      background: #94c1e3;
+      color: $inaktiv-font-color;
+      &:hover {
+        background: $bg-tap-color;
+        color: $prime-font-color
+      }
+    }
+    input:checked + label {
+      background: $bg-tap-color;
+      color: $prime-font-color;
+      height: 42px;
+    }
+  }
+}
+
+.tabs-aktuelles, .tabs-veranstaltungen {
+  clear: both;
+  text-align:center;
+  > div {
+    width: 100%;
+    overflow: auto;
+    background-color: white;
+    padding: 20px 0px 20px;
+    line-height: 1.4em;
+    opacity: 0;
+    transition: opacity .3s, transform 1s;
+    z-index: 0;
+  }
+
+  .image-container{
+    display: inline-block;
+    float: left;
+    margin-left: 5%;
+    height:$image-size;
+    width:$image-size;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../../img/placeholder_480x260.svg);
+    background-repeat: no-repeat;
+  }
+  .text-container{
+    width: 65%;
+    text-align: left;
+    display:inline-block;
+    p{
+      margin-top: 0;
+    }
+  }
+}
+
+#tab-nav-1:checked ~ .tabs-aktuelles > div:nth-of-type(1n+0) {
+  opacity: 1;
+  height: auto;
+}
+
+#tab-nav-1:checked ~ .tabs-veranstaltungen {
+  transition: opacity 1s ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+#tab-nav-2:checked ~ .tabs-veranstaltungen > div:nth-of-type(1n+0){
+  opacity: 1;
+  height: auto;
+}
+
+#tab-nav-2:checked ~ .tabs-aktuelles {
+  transition: opacity 1s ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.additional-content{
+  background-color: $bg-tap-color;
+  height: 70px;
+  .content-wrapper{
+    display: table;
+    height: 100%;
+    width: 100%;
+    a{
+      padding-right: 10px;
+      text-align: right;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+.tabs-veranstaltungen{
+  margin: 0;
+  p{
+    margin: 25px 25px 0px 25px;
+  }
+}
+
+@media screen and (max-width: $medium-breake) {
+
+  .tabbed{
+      margin: 0 auto;
+      width: 100%;
+
+      .tapped-wrapper > {
+        margin: 0;
+        input {
+      	  display: none;
+        }
+
+        input:checked + label {
+        	margin-bottom: 0;
+        }
+
+        label:nth-of-type(1n+2){
+          margin-left: 0px;
+          border-bottom: 2px solid $border-color;
+        }
+        label {
+          text-align: center;
+          font-weight: bold;
+          font-size: 18px;
+          border-top: 2px solid $border-color;
+          border-left: 2px solid $border-color;
+          border-right: 2px solid $border-color;
+          width: 100%;
+          margin: 0;
+        	padding: .5em 1.5em;
+          &:nth-of-type(1n+2){
+            margin-left: 0px;
+          }
+        }
+       }
+    }
+    .tabs-aktuelles, .tabs-veranstaltungen {
+      text-align:center;
+      > div {
+        width: 100%;
+        background-color: white;
+        padding: 20px 0px 20px;
+        line-height: 1.4em;
+        opacity: 0;
+        transition: opacity .3s, transform 1s;
+      }
+
+      .image-container{
+        position: relative;
+        top: 60px;
+        left: 50%;
+        margin-left: 0;
+        margin-top: 10px;
+        transform: translate(-50%, -50%);
+        height:$image-size;
+        width:$image-size;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(../../img/placeholder_480x260.svg);
+        background-repeat: no-repeat;
+      }
+      .text-container{
+        width: 90%;
+        p{
+          margin-top: 0;
+        }
+      }
+    }
+}

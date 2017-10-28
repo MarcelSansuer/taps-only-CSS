@@ -1,0 +1,29 @@
+h2{
+  color: $headline-font-color;
+  font-weight: normal;
+}
+
+.date{
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.sample-text{
+
+}
+
+.link{
+  text-decoration: none;
+  color: $prime-font-color;
+  display: inline;
+  font-weight: bold;
+  &::before{
+    content: "";
+    display: inline-block;
+    height:$icon-size;
+    width:$icon-size;
+    background-size: $icon-size $icon-size;
+    background-image: url(../../img/icons/right-arrow.svg);
+    background-repeat: no-repeat;
+  }
+}
